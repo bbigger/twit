@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :tweets, dependent: :destroy
 
+  validates :username, presence: true, uniqueness: true
+
   mount_uploader :avatar, AvatarUploader
 end
